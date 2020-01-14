@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Css owls</title>
+  </head>
+  <body>
+
+<style type="text/css">
+
+  *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+
+  .container{
+    position:absolute;
+    margin:auto;
+    height:50%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+    float:left;
+  }
+
+cite{
+  text-align:right;
+}
+
+  .box{
+
+    display:inline-block;
+  }
+
+  .row{
+
+    float:clear;
+  }
+
+  .tl{
+    background: #222;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+  .tr{
+    background: #222;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+  .bl{
+    background: #666;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+  .br{
+    background: #111;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+
+  .head{
+    width:75%;
+    height: 60%;
+    border: .5em solid #74553A;
+    border-radius: 8em  8em 0 0;
+    background: #2D221E;
+    background-image: radial-gradient( #74553A, #2D221E);
+    margin-left: 12.5%;
+    left:12.5%;
+    margin-top: 20%;
+    top:25%;
+  }
+
+  .centerFeather{
+    height:50%;
+    width:20%;
+    background-image: radial-gradient( #74553A, #2D221E);
+    border: .25em solid #74553A;
+    border-radius: 0em  0em 5em 5em;
+    position:relative;
+    margin:auto;
+
+
+  }
+
+  .eyeFeatherOuter{
+    height:80%;
+    width: 35%;
+    border: .3em dashed  #2D221E;
+    border-radius: 5em 1em 4em 3em;
+    background: #2D221E;
+    background-image: linear-gradient(-80deg, #2D221E, #9F5F30);
+    margin-left: 10%;
+    margin-top: -30%;
+    overflow: hidden;
+  }
+
+
+.eyeFeatherinner{
+  height:60%;
+  width: 65%;
+  border: .1em dashed  #2D221E;
+  border-radius: 5em 1em 6em 1em;
+  background: #2D221E;
+  background-image: linear-gradient(-80deg, #B79277, #9F5F30);
+  margin-left: 40%;
+  margin-top: 35%;
+}
+.eyeFeatherRuffle{
+  margin-left: 40%;
+  margin-top: 35%;
+  width: 80px;
+  height:80px;
+  border-radius:50px;
+}
+
+.eye{
+  background: #B79277;
+  background-image: linear-gradient(#2C1000, #642513);
+  width: 90%;
+  height:50%;
+  border-radius:100%;
+  border: 2px solid #CE8CA8 ;
+  margin-left:-30%;
+  overflow: hidden;
+}
+
+.pupil{
+  border:1px;
+  border-radius:100%;
+  background: #000;
+  width: 80%;
+  height: 80%;
+  margin-top:10%;
+  margin-left: 10%;
+  margin-left:10%;
+  overflow: hidden;
+}
+
+.highlightTR{
+  border-radius:100%;
+  background: #fff;
+  background-image: radial-gradient( #fff, #99d9e0, #642513);
+  width: 40%;
+  height: 40%;
+  margin-top:-80%;
+  margin-left: 50%
+}
+
+.highlightBL{
+  border-radius:100%;
+  background: rgb(256,256,256,.7);
+  width: 20%;
+  height: 20%;
+  margin-top:10%;
+  margin-left: 15%
+}
+
+.beak{
+  width:40px;
+  height:80px;
+  background: linear-gradient(#DDF1F4,#fff );
+  margin-top: -300px;
+  transform: rotate(45deg);
+  transform: scale(.5, 1);
+  border-radius: 2em 0 0 0;
+  margin-left:40%;
+  margin-top: -190px;
+}
+
+.beakUpper{
+  height:20px;
+  width:20px;
+  transform: rotate(45deg);
+  border-radius: 2em 0 0 0;
+  margin-top:80%;
+  background-image: linear-gradient(45deg, #DDF1F4, #fff);
+
+}
+
+
+</style>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="tl box">
+      <div class="head">
+        <div class="centerFeather"></div>
+        <div class="eyeFeatherOuter">
+          <div class="eyeFeatherinner">
+            <div class="browFeather"> </div>
+            <div class="underEyeFeather"> </div>
+            <div class="eye">
+              <div class="pupil"></div>
+              <div class="highlightTR"> </div>
+              <div class="highlightBL"> </div>
+            </div>
+            <div class="eyeFeatherRuffle"> </div>
+          </div>
+        </div>
+        <div class="beak">
+          <div class="beakUpper">
+            <div class="beakNostrils"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+    <div class="tr box">
+      <div class="head"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="bl box">
+        <div class="head"></div>
+    </div>
+    <div class="br box">
+        <div class="head"></div>
+    </div>
+    <cite> https://www.nature.com/articles/ncomms1213 <hr> https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fncomms1213/MediaObjects/41467_2011_Article_BFncomms1213_Fig1_HTML.jpg?as=webp</cite>
+  </div>
+
+
+
+</div>
+
+
+  </body>
+</html>
