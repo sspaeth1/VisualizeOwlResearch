@@ -1,0 +1,408 @@
+  *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+
+  }
+
+  .container{
+    position:absolute;
+    margin:auto;
+    height:50%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+    float:left;
+  }
+
+cite{
+  text-align:right;
+  color:#74553A;
+}
+
+cite hr{
+  width: 50%;
+  margin-left:25%;
+    background:#74553A;
+}
+
+.bold{
+  font-weight: 900;
+}
+
+  .box{
+
+    display:inline-block;
+  }
+
+  .row{
+
+    float:clear;
+  }
+
+  .topBox{
+    font-size: 1.25em;
+    background: #666;
+    margin:5px;
+    padding: 20px;
+    color: #fff;
+    width: 1015px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 100;
+    border-radius: 2rem  2rem 0 0;
+  }
+
+  .tl{
+    background: #EEE;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+
+  .tr{
+    background: #222;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+  .bl{
+    border: #666 solid 2px;
+    margin:5px;
+    height: 250px;
+    width: 1015px;
+  }
+
+
+  .br{
+    background: #111;
+    margin:5px;
+    height: 500px;
+    width: 500px;
+  }
+
+
+  .head{
+    width:75%;
+    height: 60%;
+    border: .5em solid #74553A;
+    border-radius: 8em  8em 0 0;
+    background: #2D221E;
+    background-image: radial-gradient( #74553A, #2D221E);
+    margin-left: 12.5%;
+    left:12.5%;
+    margin-top: 20%;
+    top:25%;
+  }
+
+
+  .centerFeather{
+    height:50%;
+    width:20%;
+    background-image: radial-gradient( #74553A, #2D221E);
+    border: .25em solid #74553A;
+    border-radius: 0em  0em 5em 5em;
+    position:relative;
+    margin:auto;
+
+
+  }
+
+  .eyeFeatherOuter{
+    height:80%;
+    width: 35%;
+    border: .3em dashed  #2D221E;
+    border-radius: 5em 1em 4em 3em;
+    background: #2D221E;
+    background-image: linear-gradient(-80deg, #2D221E, #9F5F30);
+    margin-left: 10%;
+    margin-top: -50%;
+    overflow: hidden;
+  }
+
+
+.eyeFeatherinner{
+  height:60%;
+  width: 65%;
+  border: .1em dashed  #2D221E;
+  border-radius: 5em 1em 6em 1em;
+  background: #2D221E;
+  background-image: linear-gradient(-80deg, #B79277, #9F5F30);
+  margin-left: 40%;
+  margin-top: 35%;
+}
+.eyeFeatherRuffle{
+  margin-left: 40%;
+  margin-top: 35%;
+  width: 80px;
+  height:80px;
+  border-radius:50px;
+}
+
+
+.beak{
+  width:80px;
+  height:80px;
+  background: linear-gradient(#DDF1F4,#fff );
+  margin-top: -300px;
+  transform: rotate(45deg);
+  border-radius:  0 10em 0 10em;
+  margin-left:39%;
+  margin-top: -10px;
+  overflow: none;
+}
+
+.beakUpperL{
+  height:20px;
+  width:20px;
+  border-radius: 1em .5em 0 .5em;
+  margin-top:50px
+    margin-left:-20px;
+  background-image: linear-gradient(45deg, #DDF1F4, #fff);
+  overflow: auto;
+}
+
+.beakUpperR{
+  height:20px;
+  width:20px;
+  border-radius: 1em .5em 0 .5em;
+  margin-top:20px;
+  margin-left:-20px;
+  background-image: linear-gradient(-45deg, #DDF1F4, #fff);
+  overflow: auto;
+  z-index:-1;
+}
+
+.browFeather{
+    width: 70px;
+    height: 70px;
+    border: 8px solid #DDF1F4;
+    border-top: 0;
+    border-bottom: 0;
+    border-left:0;
+    margin-left:-30px;
+    margin-top:-20px;
+    border-radius:  0 5em 0 0;
+    autoscroll:none;
+
+}
+
+
+.underEyeFeather{
+    width: 50px;
+    height: 50px;
+    border: 3px solid #DDF1F4;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0px;
+    margin-top: -40px;
+    margin-left: -5px;
+
+    border-radius:  0 0 5em 0;
+    autoscroll:none;
+
+}
+
+.eye{
+  background: #B79277;
+  background-image: linear-gradient(#2C1000, #642513);
+  width: 90%;
+  height:50%;
+  border-radius:100%;
+  border: 2px solid #CE8CA8 ;
+  margin-left:-30%;
+  margin-top:-30px;
+  overflow: hidden;
+}
+
+.pupil{
+  border:1px;
+  border-radius:100%;
+  background: #000;
+  width: 80%;
+  height: 80%;
+  margin-top:10%;
+  margin-left: 10%;
+  margin-left:10%;
+  overflow: hidden;
+}
+
+.highlightTR{
+  border-radius:100%;
+  background: #fff;
+  background-image: radial-gradient( #fff, #99d9e0, #642513);
+  width: 40%;
+  height: 40%;
+  margin-top:-80%;
+  margin-left: 50%
+}
+
+.highlightBL{
+  border-radius:100%;
+  background: rgb(256,256,256,.7);
+  width: 20%;
+  height: 20%;
+  margin-top:10%;
+  margin-left: 15%
+}
+
+.mirror{
+  transform: translateX(100px);
+  transform: scaleX(-1);
+
+}
+
+
+/* Right Side */
+
+  .eyeFeatherOuter_R{
+    height:80%;
+    width: 35%;
+    border: .3em dashed  #2D221E;
+    border-radius: 1em 5em 2em 3em;
+    background: #2D221E;
+    background-image: linear-gradient(-80deg, #2D221E, #9F5F30);
+    margin-left: 55%;
+    margin-top: -62.5%;
+    overflow: hidden;
+  }
+
+
+.eyeFeatherinner_R{
+  height:60%;
+  width: 65%;
+  border: .1em dashed  #2D221E;
+  border-radius: 1em 6em 1em 5em;
+  background: #2D221E;
+  background-image: linear-gradient(-80deg, #B79277, #9F5F30);
+  margin-left: 0%;
+  margin-top: 35%;
+}
+.eyeFeatherRuffle_R{
+  margin-left: 40%;
+  margin-top: 35%;
+  width: 80px;
+  height:80px;
+  border-radius:50px;
+}
+
+
+
+.browFeather_R{
+    width: 70px;
+    height: 70px;
+    border: 8px solid #DDF1F4;
+    border-top: 0;
+    border-bottom: 0;
+    border-right:0;
+    margin-left: 22px;
+    margin-top:-20px;
+    border-radius:  5em 0 0 0;
+    autoscroll:none;
+
+}
+
+
+.underEyeFeather_R{
+    width: 50px;
+    height: 50px;
+    border: 3px solid #DDF1F4;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0px;
+    margin-top: -40px;
+    margin-left:  20px;
+    border-radius:  0 0 0 5em;
+    autoscroll:none;
+
+}
+
+.eye_R{
+  background: #B79277;
+  background-image: linear-gradient(#2C1000, #642513);
+  width: 90%;
+  height:50%;
+  border-radius:100%;
+  border: 2px solid #CE8CA8 ;
+  margin-left:30%;
+  margin-top:-30px;
+  overflow: hidden;
+}
+
+.pupil_R{
+  border:1px;
+  border-radius:100%;
+  background: #000;
+  width: 80%;
+  height: 80%;
+  margin-top:10%;
+  margin-left: 10%;
+  margin-left:10%;
+  overflow: hidden;
+}
+
+.highlightTR_R{
+  border-radius:100%;
+  background: #fff;
+  background-image: radial-gradient( #fff, #99d9e0, #642513);
+  width: 40%;
+  height: 40%;
+  margin-top:-80%;
+  margin-left: 50%
+}
+
+.highlightBL_R{
+  border-radius:100%;
+  background: rgb(256,256,256,.7);
+  width: 20%;
+  height: 20%;
+  margin-top:10%;
+  margin-left: 15%
+}
+
+/*end Right side */
+
+/* Begin Light species */
+.headLight{
+  background: #2D221E;
+  background-image: radial-gradient( #ccc, #2D221E);
+}
+
+.tint{
+  background-color: rgba(256,256,256,.5);
+}
+
+.eyeFeatherOuter{
+  height:80%;
+  width: 35%;
+  border: .3em dashed  #2D221E;
+  border-radius: 5em 1em 4em 3em;
+  background: #2D221E;
+  background-image: linear-gradient(-80deg, #2D221E, #9F5F30);
+  margin-left: 10%;
+  margin-top: -50%;
+  overflow: hidden;
+}
+
+
+.eyeFeatherinner{
+
+}
+
+/*  Chart style */
+
+
+
+svg text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+svg{
+  margin:500px;
+  padding:50px;
+}
