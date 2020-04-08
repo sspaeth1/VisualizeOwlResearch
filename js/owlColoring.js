@@ -82,8 +82,8 @@
         // text label for the y axis
         svg.append("text")
             .attr("text-anchor", "middle")
-            .attr("dy", "1em")
-            .attr("dx", "-3em")
+            .attr("dy", "1.5em")
+            .attr("dx", "-4.5em")
             .attr("transform", "translate(100, 90)")
             .attr("transform", "rotate(-90)")
             .attr("font-family", "sans-serif")
