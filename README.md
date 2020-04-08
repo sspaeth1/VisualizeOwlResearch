@@ -17,6 +17,7 @@ Patrik Karell, Kari Ahola, Teuvo Karstinen, Jari Valkama & Jon E. Brommer
 Figure 1: Frequency distribution of tawny owl colouration in the study population.
 *****
 
-illuststation created with CSS style. Data rendered with D3
+illustration created with CSS style. Data rendered with D3
 
 *****
+http://bit.do/fsC3p

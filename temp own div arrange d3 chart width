@@ -1,18 +1,55 @@
+<script>
+
+var data = [4, 8, 15, 16, 23, 42];
+
+var height = 500,
+    barWidth = 20;
+
+var y = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, height]);
+
+var chart = d3.select(".chart")
+    .attr("width", barWidth)
+    .attr("height", barWidth * data.length);
+
+var bar = chart.selectAll("g")
+    .data(data)
+  .enter().append("g")
+    .attr("transform", function(d, i) { return "translate(" + i * barWidth + ", -500)"; });
+
+bar.append("rect")
+    .attr("height", y)
+    .attr("width", barWidth - 1);
+
+bar.append("text")
+    .attr("y", function(d) { return (d) - 3; })
+    .attr("x", barWidth / 2)
+    .attr("dy", ".35em")
+    .text(function(d) { return d; });
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Css owls</title>
+  </head>
+  <body>
+
+<style type="text/css">
+
   *{
     padding:0;
     margin:0;
     box-sizing: border-box;
-
-  }
-
-  body{
-    font-family: 'Alata', sans-serif;
   }
 
   .container{
     position:absolute;
     margin:auto;
-    height:90%;
+    height:50%;
     top:0;
     bottom:0;
     left:0;
@@ -23,17 +60,6 @@
 
 cite{
   text-align:right;
-  color:#74553A;
-}
-
-cite hr{
-  width: 50%;
-  margin-left:25%;
-    background:#74553A;
-}
-
-.bold{
-  font-weight: 900;
 }
 
   .box{
@@ -44,18 +70,6 @@ cite hr{
   .row{
 
     float:clear;
-  }
-
-  .topBox{
-    font-size: 1.25em;
-    background: #666;
-    margin:5px;
-    padding: 20px;
-    color: #fff;
-    width: 1015px;
-    font-family: 'Alata', sans-serif;
-    font-weight: 100;
-    border-radius: 2rem  2rem 0 0;
   }
 
   .tl{
@@ -74,12 +88,11 @@ cite hr{
   }
 
   .bl{
-    border: #666 solid 2px;
+    background: #666;
     margin:5px;
-    width: 1015px;
-    border-radius: 0 0 20px 20px;
+    height: 500px;
+    width: 1000px;
   }
-
 
   .br{
     background: #111;
@@ -396,42 +409,155 @@ cite hr{
 
 }
 
-/*  Chart style */
+
+
+</style>
 
 
 
-svg text {
-  text-anchor: end;
-}
+      <div class="container">
+        <div class="row">
+          <div class="tl box">
+            <div class="head headLight">
+              <div class="centerFeather">
+              </div>
+              <div class="beak">
+                  <div class="beakNostrils">
+                  </div>
+             </div>
+            <div class="eyeFeatherOuter">
+                <div class="eyeFeatherinner">
+                  <div class="browFeather">
+                 </div>
+                  <div class="eye">
+                    <div class="pupil">
+                    </div>
+                    <div class="highlightTR">
+                    </div>
+                    <div class="highlightBL">
+                    </div>
+                  </div>
+                  <div class="underEyeFeather">
+                  </div>
+                  <div class="eyeFeatherRuffle">
+                  </div>
+                </div>
+              </div>
 
-svg{
-  margin:auto 10%;
+              <div class="eyeFeatherOuter_R">
+                  <div class="eyeFeatherinner_R">
+                    <div class="browFeather_R">
+                    </div>
+                    <div class="eye_R">
+                      <div class="pupil_R">
 
-}
+                      </div>
+                      <div class="highlightTR_R">
+                      </div>
+                      <div class="highlightBL_R">
+                      </div>
+                    </div>
+                    <div class="underEyeFeather_R">
+                    </div>
+                    <div class="eyeFeatherRuffle_R">
+                    </div>
+                  </div>
+                </div>
 
-.owlChart{
-  display: inline-block;
-  float:left;
-  padding-top:60px;
-}
+          </div>
+        </div>
+          <div class="tr box">
+            <div class="head">
+              <div class="centerFeather">
+              </div>
+              <div class="beak">
+                <div class="beakNostrils">
+                </div>
+             </div>
+            <div class="eyeFeatherOuter">
+                <div class="eyeFeatherinner">
+                  <div class="browFeather">
+                  </div>
+                  <div class="eye">
+                    <div class="pupil">
+                    </div>
+                    <div class="highlightTR">
+                    </div>
+                    <div class="highlightBL">
+                    </div>
+                  </div>
+                  <div class="underEyeFeather">
+                  </div>
+                  <div class="eyeFeatherRuffle">
+                  </div>
+              </div>
+            </div>
 
-.chartTitle{
-  padding: 5px 0;
-  background: rgb(254,246,239);
-  background: linear-gradient(90deg, rgba(254,246,239,1) 0%, rgba(108,83,61,1) 100%);
-  color:rgb(39, 32, 28);
-  border-bottom: 2px solid #666;
-}
+            <div class="eyeFeatherOuter_R">
+                <div class="eyeFeatherinner_R">
+                  <div class="browFeather_R">
+                  </div>
+                  <div class="eye_R">
+                    <div class="pupil_R">
+                    </div>
+                    <div class="highlightTR_R">
+                    </div>
+                    <div class="highlightBL_R">
+                    </div>
+                  </div>
+                  <div class="underEyeFeather_R">
+                  </div>
+                  <div class="eyeFeatherRuffle_R">
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="row">
+          <div class="bl box">
+          </div>
+          <cite> https://www.nature.com/articles/ncomms1213 <hr> https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fncomms1213/MediaObjects/41467_2011_Article_BFncomms1213_Fig1_HTML.jpg?as=webp</cite>
+        </div>
+      </div>
 
-.grey{
-  color:#666;
-}
+
+  </body>
+</html>
 
 
-.abstract{
-  border-bottom:  1px solid #AAA;
-  padding: 20px 0 10px 0;
-  width:90%;
-  margin: auto;
-  display:block;
-}
+
+----
+attempt horizontal chart
+
+        <svg class="chart"></svg>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script>
+
+        var data = [4, 8, 15, 16, 23, 42];
+
+        var height = 500,
+            barWidth = 20;
+
+        var y = d3.scale.linear()
+            .domain([0, d3.max(data)])
+            .range([0, height]);
+
+        var chart = d3.select(".chart")
+            .attr("width", barWidth)
+            .attr("height", barWidth * data.length);
+
+        var bar = chart.selectAll("g")
+            .data(data)
+          .enter().append("g")
+            .attr("transform", function(d, i) { return "translate(" + i * barWidth + ", -500)"; });
+
+        bar.append("rect")
+            .attr("height", y)
+            .attr("width", barWidth - 1);
+
+        bar.append("text")
+            .attr("y", function(d) { return (d) - 3; })
+            .attr("x", barWidth / 2)
+            .attr("dy", ".35em")
+            .text(function(d) { return d; });
+
+        </script>

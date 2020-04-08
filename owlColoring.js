@@ -1,81 +1,103 @@
+       //Width and height
+        var w = 800;
+        var h = 230;
+        
+        var dataset = [1, 3, 33, 20, 9, 5,4,5,12,11,2];
+        
+        var xScale = d3.scaleBand()
+                        .domain(d3.range(dataset.length))
+                        .rangeRound([0, w])
+                        .paddingInner(0.05);
+
+        var yScale = d3.scaleLinear()
+                        .domain([0, d3.max(dataset)])
+                        .range([0, h -20]);
+
+        
+        //Create SVG element
+        var svg = d3.select("div.owlChart")
+                    .append("svg")
+                    .attr("width", w + 15)
+                    .attr("height", h + 65);
+
+        //Create bars
+        svg.selectAll("rect")
+           .data(dataset)
+           .enter()
+           .append("rect")
+           .attr("x", function(d, i) {
+                   return xScale(i);
+           })
+           .attr("y", function(d) {
+                   return h - yScale(d);
+           })
+           .attr("width", xScale.bandwidth())
+           .attr("height", function(d) {
+                   return yScale(d);
+           })
+           .attr("fill", function(d, i) {
+                return "hsl(27, 25%," + (100 - i*9)  + "%)";
+           });
+
+        //Create labels
+        svg.selectAll("text")
+           .data(dataset)
+           .enter()
+           .append("text")
+           .text(function(d) {
+                   return d;
+           })
+           .attr("text-anchor", "middle")
+           .attr("x", function(d, i) {
+                   return xScale(i) + xScale.bandwidth() / 2;
+           })
+           .attr("y", function(d) {
+                   return h - yScale(d) - 3;
+           })
+           .attr("font-family", "sans-serif")
+           .attr("font-size", "20px")
+           .attr("font-weight", "bold")
+           .attr("fill", "#666");
 
 
-let dataset = [1, 3, 33, 20, 9, 5,4,5,12,11,2];
-const  w = window.screen.width,
-       h = window.screen.height,
-   scale = 20,
-   barPadding= 10;
+        // text label for the x axis
+        svg.append("text")             
+            .attr("transform",
+                    "translate(420, 275)")
+            .style("text-anchor", "middle")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "15px")
+            .attr("font-weight", "bold")
+            .attr("fill", "#999")
+            .text("Color Score");
 
+        // Add scales to axis
+        var x_axis = d3.axisBottom()
+        .scale(xScale);
+        
+        svg.append("g")
+            .attr("transform", "translate(0," + h + ")")
+            .call(x_axis);
 
-var svg = d3.select("body")
-            .append("svg")
-           .attr("width", 9)
-           .attr("height", h);
+        // text label for the y axis
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", "1em")
+            .attr("dx", "-3em")
+            .attr("transform", "translate(100, 90)")
+            .attr("transform", "rotate(-90)")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "15px")
+            .attr("font-weight", "bold")
+            .attr("fill", "#999")
+            .text("Frequence (%)");   
+            
+            var y_axis = d3.axisLeft()
+             .scale(yScale);
 
-
-
-
-  svg.selectAll("rect")
-    .data(dataset)
-    .enter()
-    .append("rect")
-    .attr("x", function(d, i) { return i * (w/dataset.length);})
-    .attr("y",  function(d){ h - d})
-    .attr("width", w/dataset.length - barPadding)
-    .attr("height", function(d){ return  d * scale } )
-    .attr("fill",function(d) {
-           return "rgb(0, 0, " + (d * 10) + ")";
-      });
-
-
-/*
-
-var width = 420,
-    barHeight = 20;
-
-
-      var defs = svg.append("defs");
-      var gradient = defs.append("linearGradient")
-         .attr("id", "svgGradient")
-         .attr("x1", "0%")
-         .attr("x2", "100%")
-         .attr("y1", "0%")
-         .attr("y2", "100%");
-      gradient.append("stop")
-         .attr('class', 'start')
-         .attr("offset", "0%")
-         .attr("stop-color", "red")
-         .attr("stop-opacity", 1);
-      gradient.append("stop")
-         .attr('class', 'end')
-         .attr("offset", "100%")
-         .attr("stop-color", "blue")
-         .attr("stop-opacity", 1);
-
-
-
-var x = d3.scale.linear()
-    .domain([0, d3.max(data)])
-    .range([0, width]);
-
-var chart = d3.select(".chart")
-    .attr("width", width)
-    .attr("height", barHeight * data.length);
-
-var bar = chart.selectAll("g")
-    .data(data)
-  .enter().append("g")
-    .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
-bar.append("rect")
-    .attr("width", x)
-    .attr("height", barHeight - 1)
-    .attr("fill", "url(#svgGradient)");
-
-bar.append("text")
-    .attr("x", function(d) { return x(d) - 3; })
-    .attr("y", barHeight / 2)
-    .attr("dy", ".35em")
-    .text(function(d) { return d; });
-
-*/
+            //Append group and insert axis
+            svg.append("g")
+            .attr("transform", "translate(2, 20)")
+            
+            .call(y_axis);
+    
