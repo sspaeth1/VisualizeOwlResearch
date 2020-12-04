@@ -5,14 +5,15 @@
     <title> Css owls</title>
     <link rel="stylesheet" href="css/owl.css">
     <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
-
+    <!-- <script src="js/d3.v4.min.js" charset="utf-8"></script> -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="js/headFollow.js" type="text/javascript"></script>
   </head>
-
 
 <body>
 <div class="container">
-  <div class="row topBox box">
+  <div class="row topBox box" id="topBox">
     <p><span class="bold">Figure 1:</span> Frequency distribution of tawny owl colouration in the study population.</p>
   </div>
   <div class="row">
@@ -25,7 +26,7 @@
       <div class="eyeFeatherOuter">
           <div class="eyeFeatherinner">
             <div class="browFeather"> </div>
-            <div class="eye">
+            <div class="eye"  id="eye_L_grey">
               <div class="pupil"></div>
               <div class="highlightTR"> </div>
               <div class="highlightBL"> </div>
@@ -34,11 +35,10 @@
             <div class="eyeFeatherRuffle"> </div>
           </div>
         </div>
-
         <div class="eyeFeatherOuter_R">
             <div class="eyeFeatherinner_R">
               <div class="browFeather_R"> </div>
-              <div class="eye_R">
+              <div class="eye_R" id="eye_R_grey">
                 <div class="pupil_R"></div>
                 <div class="highlightTR_R"> </div>
                 <div class="highlightBL_R"> </div>
@@ -47,7 +47,6 @@
               <div class="eyeFeatherRuffle_R"> </div>
             </div>
           </div>
-
     </div>
   </div>
     <div class="tr box">
@@ -59,7 +58,7 @@
     <div class="eyeFeatherOuter">
         <div class="eyeFeatherinner">
           <div class="browFeather"> </div>
-          <div class="eye">
+          <div class="eye"  id="eye_L_brown">
             <div class="pupil"></div>
             <div class="highlightTR"> </div>
             <div class="highlightBL"> </div>
@@ -68,11 +67,10 @@
           <div class="eyeFeatherRuffle"> </div>
         </div>
       </div>
-
       <div class="eyeFeatherOuter_R">
           <div class="eyeFeatherinner_R">
             <div class="browFeather_R"> </div>
-            <div class="eye_R">
+            <div class="eye_R"  id="eye_R_brown" style="margin-left:30%; margin-top:-30%">
               <div class="pupil_R"></div>
               <div class="highlightTR_R"> </div>
               <div class="highlightBL_R"> </div>
@@ -80,9 +78,7 @@
             <div class="underEyeFeather_R"> </div>
             <div class="eyeFeatherRuffle_R"> </div>
           </div>
-
         </div>
-
   </div>
 </div>
     </div>
@@ -91,8 +87,7 @@
         <div class="chartTitle">
            <h1> <span class="grey">Grey</span>  ⟷  Brown</h1>
         </div>
-
-        <div class="owlChart"> </div>
+        <div id="owlChart"> </div>
       </div>
       <div>
          <h3 class="abstract">Abstract</h3>  
@@ -123,7 +118,60 @@
       </div>
   </div>
   <script src="js/owlColoring.js"></script>
+  <!-- <script src="js/owlColoring_static.js"></script> -->
+<script>
+      let w = window.innerWidth,
+            h = document.innerHeight,
+            brownR = document.getElementById('eye_R_brown').style.marginLeft,
+            brownL = document.getElementById('eye_L_brown').style.marginLeft,
+            greyR = document.getElementById('eye_R_grey').style.marginLeft,
+            greyL = document.getElementById('eye_L_grey').style.marginLeft; 
+(function() {
+    var mousePos;
 
 
+    document.onmousemove = handleMouseMove;
+    setInterval(getMousePosition, 1000); // setInterval repeats every X ms
+
+    function handleMouseMove(event) {
+        var dot, eventDoc, doc, body, pageX, pageY;
+        event = event || window.event; // IE-ism
+
+        // If pageX/Y aren't available and clientX/Y are,
+        // calculate pageX/Y - logic taken from jQuery.
+        // (This is to support old IE)
+        if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+            event.pageX = event.clientX +
+              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+              (doc && doc.clientLeft || body && body.clientLeft || 0);
+            event.pageY = event.clientY +
+              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+              (doc && doc.clientTop  || body && body.clientTop  || 0 );
+        }
+        mousePos = {
+            x: event.pageX,
+            y: event.pageY
+        };
+    }
+    function getMousePosition() {
+        var pos = mousePos;
+        if (!pos) {
+            // We haven't seen any movement yet
+        }
+        else {
+            // Use pos.x and pos.y  
+            brownR = brownR.slice(0,-1); 
+           while( pos.x > w * .66){
+               brownR = brownR.slice(0,-1)+1 + "%";
+               console.log( brownR);
+           }
+           brownR =  document.getElementById('eye_R_brown').style.marginLeft;
+        }
+    }
+})();
+</script>
   </body>
 </html>

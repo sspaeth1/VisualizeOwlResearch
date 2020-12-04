@@ -52,10 +52,16 @@ cite hr{
     margin:5px;
     padding: 20px;
     color: #fff;
-    width: 1015px;
+    width: 1010px;
     font-family: 'Alata', sans-serif;
     font-weight: 100;
     border-radius: 2rem  2rem 0 0;
+  }
+
+  @media screen and (max-width: 1040px){
+    .topBox{
+    width: 500px;
+    }
   }
 
   .tl{
@@ -63,6 +69,8 @@ cite hr{
     margin:5px;
     height: 500px;
     width: 500px;
+    /* width: 50vw;
+    height: 50vw; */
   }
 
 
@@ -78,6 +86,12 @@ cite hr{
     margin:5px;
     width: 1015px;
     border-radius: 0 0 20px 20px;
+  }
+
+  @media screen and (max-width: 1040px){
+   .bl{
+     width:500px;
+   }
   }
 
 
@@ -406,6 +420,9 @@ svg text {
 
 svg{
   margin:auto 10%;
+  max-width: 100%;
+  position: relative;
+  bottom: 0;
 
 }
 
@@ -413,6 +430,7 @@ svg{
   display: inline-block;
   float:left;
   padding-top:60px;
+  position: relative;
 }
 
 .chartTitle{
@@ -434,4 +452,60 @@ svg{
   width:90%;
   margin: auto;
   display:block;
+}
+
+
+/*  ---dynamic tooltip --- */
+
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: rgb(114, 79, 46);
+}
+
+.bar:hover {
+  fill: rgb(173, 226, 233) ;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(199, 199, 199);
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
 }
