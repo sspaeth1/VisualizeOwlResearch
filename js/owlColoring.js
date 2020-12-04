@@ -32,7 +32,7 @@ var svg = d3
 
 svg.call(tip);
 
-d3.csv("../data/owlData.csv", type, function (error, data) {
+d3.csv("data/owlData.csv", type, function (error, data) {
   x.domain(
     data.map(function (d) {
       return d.colorScore;
@@ -86,3 +86,4 @@ function type(d) {
   d.frequency = +d.frequency;
   return d;
 }
+

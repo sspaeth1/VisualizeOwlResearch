@@ -224,7 +224,7 @@ cite hr{
 
 }
 
-.eye{
+.eye_L{
   background: #B79277;
   background-image: linear-gradient(#2C1000, #642513);
   width: 90%;
@@ -234,6 +234,7 @@ cite hr{
   margin-left:-30%;
   margin-top:-30px;
   overflow: hidden;
+  position: relative;
 }
 
 .pupil{
@@ -248,10 +249,22 @@ cite hr{
   overflow: hidden;
 }
 
+.eye_L:after, .eye_R:after { /*pupil*/
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  content: " ";
+  z-index: 10;
+}
+
 .highlightTR{
   border-radius:100%;
-  background: #fff;
-  background-image: radial-gradient( #fff, #99d9e0, #642513);
+  background: rgba(254,246,239,.8);
+  /* background-image: radial-gradient( #fff, #99d9e0, #642513); */
   width: 40%;
   height: 40%;
   margin-top:-80%;
@@ -364,8 +377,8 @@ cite hr{
 
 .highlightTR_R{
   border-radius:100%;
-  background: #fff;
-  background-image: radial-gradient( #fff, #99d9e0, #642513);
+  background: rgba(254,246,239,.8);
+  /* background-image: radial-gradient( #fff, #99d9e0, #642513); */
   width: 40%;
   height: 40%;
   margin-top:-80%;
@@ -509,3 +522,4 @@ body {
   top: 100%;
   left: 0;
 }
+
