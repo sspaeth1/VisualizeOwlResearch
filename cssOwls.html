@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-    <script src="js/headFollow.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
 
@@ -118,33 +117,8 @@
       </div>
   </div>
   <script src="js/owlColoring.js"></script>
- 
- <script>
-      $(".container").mousemove(function(event) {
-      var eye_R = $(".eye_R");
-      var x = (eye_R.offset().left) + (eye_R.width() / 2);
-      var y = (eye_R.offset().top) + (eye_R.height() / 2);
-      var rad = Math.atan2(event.pageX - x, event.pageY - y);
-      var rot = (rad * (180 / Math.PI) * -1) + 180;
-      eye_R.css({
-        '-webkit-transform': 'rotate(' + rot + 'deg)',
-        '-moz-transform': 'rotate(' + rot + 'deg)',
-        '-ms-transform': 'rotate(' + rot + 'deg)',
-        'transform': 'rotate(' + rot + 'deg)'
-      });
+  <script src="js/headFollow.js" type="text/javascript"></script>
 
-      var eye_L = $(".eye_L");
-      var x = (eye_L.offset().left) + (eye_L.width() / 2);
-      var y = (eye_L.offset().top) + (eye_L.height() / 2);
-      var rad = Math.atan2(event.pageX - x, event.pageY - y);
-      var rot = (rad * (180 / Math.PI) * -1) + 180;
-      eye_L.css({
-        '-webkit-transform': 'rotate(' + rot + 'deg)',
-        '-moz-transform': 'rotate(' + rot + 'deg)',
-        '-ms-transform': 'rotate(' + rot + 'deg)',
-        'transform': 'rotate(' + rot + 'deg)'
-      });
-    });
- </script>
+
   </body>
 </html>

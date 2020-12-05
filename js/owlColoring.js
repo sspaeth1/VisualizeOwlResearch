@@ -2,8 +2,6 @@ var margin = { top: 40, right: 20, bottom: 30, left: 40 },
   width = 0.8 * document.getElementById("topBox").clientWidth;
 height = 6 * document.getElementById("topBox").clientHeight;
 
-console.log("height: ", height);
-console.log("width: ", width);
 var formatPercent = d3.format(".0%");
 
 var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1);
@@ -86,4 +84,3 @@ function type(d) {
   d.frequency = +d.frequency;
   return d;
 }
-
