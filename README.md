@@ -20,8 +20,4 @@ Figure 1: Frequency distribution of tawny owl colouration in the study populatio
 illustration created with CSS style. Data rendered with D3
 
 *****
-<<<<<<< HEAD
-http://bit.do/fsC3p
-=======
-http://bit.do/fsC3p
->>>>>>> 4c79925c564eb0b11384aaffdca53e217dd14e39
+https://codepen.io/sspaeth1/pen/yLYYyGY?editors=0010
