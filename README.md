@@ -20,7 +20,9 @@ Figure 1: Frequency distribution of tawny owl colouration in the study populatio
 illustration created with CSS style. Data rendered with D3
 
 *****
-https://codepen.io/sspaeth1/pen/yLYYyGY?editors=0010
+
 
 eyes follow and hover bar graph with tooltip:
 https://biochromatic.com/hosted/cssOwls/cssowls.html
+
+codepen version: https://codepen.io/sspaeth1/pen/yLYYyGY?editors=0010
